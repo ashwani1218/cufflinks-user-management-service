@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: user-management-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/cufflinks
+    username: root
+    password: Ashwani@1
+  jpa:
+    hibernate:
+      ddl-auto: update
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    instance-id: ${spring.application.name}.${random.value}
+    preferIpAddress: true
+    homePageUrl: https://${eureka.hostname}/
+
