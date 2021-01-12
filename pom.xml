@@ -10,16 +10,25 @@
 	</parent>
 	<groupId>com.cufflinks</groupId>
 	<artifactId>user-management-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>user-management-service</name>
 	<description>User management service for cufflinks project</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+		<common.libraries.version>0.0.3</common.libraries.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.cufflinks</groupId>
+			<artifactId>common-libraries</artifactId>
+			<version>${common.libraries.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -59,11 +68,6 @@
 			<version>2.9.2</version>
 		</dependency>
 		<dependency>
-			<groupId>com.cufflinks</groupId>
-			<artifactId>common-libraries</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -94,6 +98,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 		</plugins>
 	</build>
 
